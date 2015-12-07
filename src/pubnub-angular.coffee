@@ -207,7 +207,7 @@ angular.module('pubnub.angular.service', [])
     # It's also easy to integrate presence events using the Angular API. In the example above, we just add an additional couple lines of code to call the [`PubNub.ngHereNow()`](http://www.pubnub.com/docs/javascript/api/reference.html#here_now) method (retrieve current users in a channel).
     c.ngHereNow = (args) ->
       args = c._ngInstallHandlers(args)
-      args.state = true
+      #args.state = true
       args.callback = args.presence
       delete args.presence
       delete args.message
