@@ -1,6 +1,6 @@
 # Annotated Source Code for the PubNub AngularJS library.
 # Welcome! Thank you for reading this documentation - if you have any feedback or suggestions, please file a GitHub issue and we'll take a look right away!
-# 
+#
 # Using this library should be as easy as:
 #
 # 1. Install the library using `bower install pubnub-angular`
@@ -79,7 +79,7 @@ angular.module('pubnub.angular.service', [])
       oldmessage = args.message
       # Create a message handler wrapper that broadcasts the message event and calls the original user-provided message handler.
       args.message = ->
-        if args.channel 
+        if args.channel
          $rootScope.$broadcast c.ngMsgEv(args.channel), {
            message: arguments[0],
            env: arguments[1],
@@ -123,11 +123,11 @@ angular.module('pubnub.angular.service', [])
               c['_presence'][channel].push event.uuid if c['_presence'][channel].indexOf(event.uuid) < 0
               c['_presData'][channel][event.uuid] = event.data if event.data
 
-        if args.channel 
+        if args.channel
           $rootScope.$broadcast c.ngPrsEv(channel), {
           event: event,
           message: arguments[1],
-          channel: channel
+          channel: args.channel
           }
 
         if args.channel_group
@@ -135,7 +135,7 @@ angular.module('pubnub.angular.service', [])
             event: event,
             message: arguments[1],
             channel_group: args.channel_group
-          }          
+          }
 
         oldpresence(arguments) if oldpresence
 
@@ -214,7 +214,7 @@ angular.module('pubnub.angular.service', [])
       c.jsapi.here_now(args)
 
     c.ngChannelGroupAddChannel = (args) ->
-      c.jsapi.channel_groups_add_channel({ 
+      c.jsapi.channel_groups_add_channel({
               channel_group: args.channel_group,
               channel: args.channel})
 
