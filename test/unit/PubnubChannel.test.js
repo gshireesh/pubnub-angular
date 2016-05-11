@@ -194,8 +194,12 @@ describe('$pubnubChannel', function () {
         
         chan.$publish('Hello').then(function(res){
             expect(res[1]).to.be.equal('Sent')
-            expect(chan.length).to.be.equal(1)
-            done();        
+            $rootScope.$digest
+            setTimeout(function(){
+              expect(chan.length).to.be.equal(1);
+              done();
+            }, 1500)
+                    
         });
                    
         setTimeout($rootScope.$digest, 1200)           
