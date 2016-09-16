@@ -3,7 +3,7 @@
   "version": "3.2.2",
   "description": "npm UNOfficial PubNub AngularJS Package",
   "license": "MIT",
-  "main": "dist/pubnub-angular.min.js",
+  "main": "index.js",
   "scripts": {
     "test": "grunt test",
     "codecov": "cat coverage/*/lcov.info | codecov"
