@@ -1,7 +1,7 @@
 {
-  "name": "pubnub-angular",
+  "name": "pubnub-angular-service",
   "version": "3.2.1",
-  "description": "Official PubNub AngularJS Package",
+  "description": "npm UNOfficial PubNub AngularJS Package",
   "license": "MIT",
   "main": "dist/pubnub-angular.min.js",
   "scripts": {
